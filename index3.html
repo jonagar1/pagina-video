@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video con mensaje al final</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    #video-container {
+      width: 80%;
+      max-width: 600px;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #333;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="video-container">
+    <video id="myVideo" width="100%" controls>
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de videos.
+    </video>
+  </div>
+
+  <p id="message">Te amo Muchooooo https://jonagar1.github.io/pagina-prog/</p>
+
+  <script>
+    // Selecciona el elemento de video y el mensaje
+    const video = document.getElementById('myVideo');
+    const message = document.getElementById('message');
+
+    // Agrega un evento para mostrar el mensaje al final del video
+    video.onended = function() {
+      message.style.display = 'block';
+    };
+  </script>
+
+</body>
+</html>
